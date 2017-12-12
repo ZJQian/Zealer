@@ -1,0 +1,6 @@
+framework module Pods_ZealerTests {
+  umbrella header "Pods-ZealerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
