@@ -3,4 +3,4 @@
 
 ## 效果图:
 
-[!image](https://github.com/ZJQian/Zealer/blob/master/gif.gif)
+![image](https://github.com/ZJQian/Zealer/blob/master/gif.gif)
