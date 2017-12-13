@@ -76,13 +76,22 @@ class ZLCommunityViewController: ZLBaseViewController {
         
         if dialog == nil {
             
+            self.navigationItem.rightBarButtonItem?.customView?.transform = CGAffineTransform.init(rotationAngle: CGFloat(Double.pi))
             dialog = SelectNameDialog.init(frame: CGRect.init(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
             dialog?.delegate = self as SelectNameDialogDelegate
             dialog?.hideCallBack = {
+                self.navigationItem.rightBarButtonItem?.customView?.transform = CGAffineTransform.init(rotationAngle: 0)
                 self.dialog = nil
             }
             view.addSubview(dialog!)
             dialog?.show()
+        }else{
+            
+            dialog?.hide()
+            dialog?.hideCallBack = {
+                self.navigationItem.rightBarButtonItem?.customView?.transform = CGAffineTransform.init(rotationAngle: 0)
+                self.dialog = nil
+            }
         }
     }
     
