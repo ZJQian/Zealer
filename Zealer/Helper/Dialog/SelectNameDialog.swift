@@ -27,13 +27,14 @@ class SelectNameDialog: UIView {
     fileprivate var v_bg = UIView()
     fileprivate var v_warn = UIView()
     fileprivate let nameArray = ["朴树","李志","许巍","新裤子","窦唯","张楚","崔健","万青","郑钧","谢天笑","幼稚园杀手"]
+    fileprivate var v_right: UIView?
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, rightView: UIView) {
         super.init(frame: frame)
         
         superview?.addSubview(self)
         
-        
+        v_right = rightView;
         v_bg.frame = self.bounds
         v_bg.backgroundColor = rgba(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.5)
         v_bg.alpha = 0
@@ -80,6 +81,8 @@ class SelectNameDialog: UIView {
         
 
         UIView.animate(withDuration: 0.5) {
+            
+            self.v_right?.transform = CGAffineTransform.init(rotationAngle: CGFloat(Double.pi))
             self.v_bg.alpha = 1
             var rect = self.v_warn.frame
             rect.origin.y += rect.size.height
@@ -91,6 +94,8 @@ class SelectNameDialog: UIView {
         
         UIView.animate(withDuration: 0.5, animations: {
             
+            self.v_right?.transform = CGAffineTransform.init(rotationAngle: 0)
+
             var rect = self.v_warn.frame
             rect.origin.y -= rect.size.height
             self.v_warn.frame = rect

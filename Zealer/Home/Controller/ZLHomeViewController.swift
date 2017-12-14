@@ -36,19 +36,21 @@ class ZLHomeViewController: ZLBaseViewController {
     }
     
     fileprivate func setNavi() {
-        
+                
         seg = ZLHomeSegmentView.init(frame: CGRect.init(x: 20, y: 0, width: SCREEN_WIDTH-80, height:44), titleArray: titleArray)
         seg?.delegate = self
-        navigationController?.navigationBar.addSubview(seg!)
+        navigationItem.titleView = seg
         showRightItem(imageName: "search")
     }
     
     fileprivate func setSubViews() {
         
+        navigationController?.delegate = self
         scrollView.delegate = self
         view.addSubview(scrollView)
         for _ in 0..<titleArray.count {
             let vc = HomeItemViewController()
+            vc.delegate = self as HomeItemViewControllerDelegate
             addChildViewController(vc)
         }
         scrollView.contentSize = CGSize.init(width: SCREEN_WIDTH*CGFloat(titleArray.count), height: 0)
@@ -81,10 +83,23 @@ class ZLHomeViewController: ZLBaseViewController {
     }
 }
 
-extension ZLHomeViewController: ZLHomeSegmentViewDelegate {
+extension ZLHomeViewController: ZLHomeSegmentViewDelegate,HomeItemViewControllerDelegate,UINavigationControllerDelegate {
     
     func clickSegment(withIndex index: Int) {
         scrollView.setContentOffset(CGPoint.init(x: CGFloat(index)*SCREEN_WIDTH, y: scrollView.contentOffset.y), animated: true)
     }
+    
+    func didSelectedItem(withIndex index: Int) {
+        
+        let vc = ItemDetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+//        let isShow = viewController.isKind(of: ZLHomeViewController.self as AnyClass)
+//        seg?.isHidden = !isShow
+    }
+    
 }
 

@@ -15,6 +15,7 @@ class ZLBaseNavigationController: UINavigationController {
 
         // Do any additional setup after loading the view.
         
+        navigationBar.isTranslucent = false
         navigationBar.barTintColor = NAVI_COLOR
     }
 
@@ -24,9 +25,9 @@ class ZLBaseNavigationController: UINavigationController {
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if viewControllers.count > 0 {
+        if self.viewControllers.count > 0 {
             
-            hidesBottomBarWhenPushed = true
+            viewController.hidesBottomBarWhenPushed = true
         }
         super.pushViewController(viewController, animated: animated)
     }

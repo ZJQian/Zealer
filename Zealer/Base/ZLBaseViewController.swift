@@ -143,7 +143,7 @@ class ZLBaseViewController: UIViewController {
     public func showRightItem(imageName: String) {
         
         let btn_right = UIButton.init(type: .custom)
-        btn_right.frame = CGRect.init(x: 0, y: 0, width: 20, height: 20)
+        btn_right.frame = CGRect.init(x: 0, y: 0, width: 18, height: 18)
         btn_right.setImage(UIImage.init(named: imageName), for: .normal)
         btn_right.setTitleColor(UIColor.white, for: .normal)
         btn_right.addTarget(self, action: #selector(rightItemAction), for: .touchUpInside)

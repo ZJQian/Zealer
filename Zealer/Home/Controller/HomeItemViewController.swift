@@ -12,8 +12,11 @@ import RxSwift
 import RxCocoa
 import SwiftyJSON
 
-private let dispose = DisposeBag()
+protocol HomeItemViewControllerDelegate {
+    func didSelectedItem(withIndex index: Int)
+}
 
+private let dispose = DisposeBag()
 
 class HomeItemViewController: ZLBaseViewController {
 
@@ -21,6 +24,7 @@ class HomeItemViewController: ZLBaseViewController {
     var dataArray = Array<Any>()
     var api_type: APIManager?
     var index: Int?
+    var delegate: HomeItemViewControllerDelegate?
     
 
     override func viewDidLoad() {
@@ -90,6 +94,11 @@ class HomeItemViewController: ZLBaseViewController {
             return cell!
         }
         
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
+        
+        delegate?.didSelectedItem(withIndex: indexPath.row)
     }
 
     override func didReceiveMemoryWarning() {
