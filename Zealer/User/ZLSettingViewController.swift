@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class ZLSettingViewController: ZLBaseViewController {
 
-    let titleArray = ["清除缓存","关于我们","意见反馈"]
+    let titleArray = ["清除缓存","关于我们","意见反馈","安全设置"]
     
     
     override func viewDidLoad() {
@@ -19,10 +20,10 @@ class ZLSettingViewController: ZLBaseViewController {
         // Do any additional setup after loading the view.
         
         naviTitle = "设置"
-        tableView.backgroundColor = UIColor.clear
-        tableView.rowHeight = 50.0
-        tableView.isScrollEnabled = false
-        view.addSubview(tableView)
+        zlTableView.backgroundColor = UIColor.clear
+        zlTableView.rowHeight = 50.0
+        zlTableView.isScrollEnabled = false
+        view.addSubview(zlTableView)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +38,13 @@ class ZLSettingViewController: ZLBaseViewController {
         }
         cell?.textLabel?.text = titleArray[indexPath.row]
         return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "privacy") as! ZLPrivacyViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

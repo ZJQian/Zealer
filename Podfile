@@ -28,5 +28,6 @@ pod 'Moya/RxSwift'
 pod 'MJRefresh', '~> 3.1.15.1'
 pod 'SDCycleScrollView', '~> 1.74'
 pod 'SnapKit', '~> 4.0.0'
+pod 'IQKeyboardManagerSwift', '~> 5.0.6'
 
 end

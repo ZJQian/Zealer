@@ -38,15 +38,17 @@ class ZLCommunityViewController: ZLBaseViewController {
     
     fileprivate func setSubViews() {
         
-        tableView.rowHeight = 80.0
-        tableView.backgroundColor = UIColor.clear
-        tableView.separatorInset = .zero
-        view.addSubview(tableView)
+        zlTableView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-64)
+        zlTableView.rowHeight = 80.0
+        zlTableView.backgroundColor = UIColor.clear
+        zlTableView.separatorInset = .zero
+        view.addSubview(zlTableView)
         showHeaderRefresh(show: true) {
             
             self.getData(withName: self.selectName!)
         }
-        tableView.mj_header.beginRefreshing()
+        zlTableView.mj_header.beginRefreshing()
+        
     }
     
     fileprivate func getData(withName name: String) {
@@ -60,15 +62,16 @@ class ZLCommunityViewController: ZLBaseViewController {
                 let json = JSON.init(response)
                 
                 self.dataArray = json["musics"].arrayValue
-                self.tableView.mj_header.endRefreshing()
-                self.tableView.reloadData()
+                self.zlTableView.mj_header.endRefreshing()
+                self.zlTableView.reloadData()
                 DLog(message: response)
             }) { (error) in
                 
-                self.tableView.mj_header.endRefreshing()
+                self.zlTableView.mj_header.endRefreshing()
                 
                 DLog(message: error)
             }.disposed(by: dispose)
+        
     }
     
     override func rightItemAction() {
@@ -76,7 +79,7 @@ class ZLCommunityViewController: ZLBaseViewController {
         
         if dialog == nil {
             
-            dialog = SelectNameDialog.init(frame: CGRect.init(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), rightView: (self.navigationItem.rightBarButtonItem?.customView)!)
+            dialog = SelectNameDialog.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), rightView: (self.navigationItem.rightBarButtonItem?.customView)!)
             dialog?.delegate = self as SelectNameDialogDelegate
             dialog?.hideCallBack = {
                 self.dialog = nil
@@ -119,7 +122,7 @@ extension ZLCommunityViewController: SelectNameDialogDelegate {
         
         selectName = name
         naviTitle = name
-        tableView.mj_header.beginRefreshing()
+        zlTableView.mj_header.beginRefreshing()
     }
 }
 

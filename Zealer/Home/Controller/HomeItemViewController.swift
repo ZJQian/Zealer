@@ -32,16 +32,16 @@ class HomeItemViewController: ZLBaseViewController {
 
         // Do any additional setup after loading the view.
         
-        tableView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-49-64)
-        tableView.rowHeight = 150.0
-        tableView.backgroundColor = UIColor.clear
-        tableView.separatorInset = .zero
-        view.addSubview(tableView)
+        zlTableView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-49-64)
+        zlTableView.rowHeight = 150.0
+        zlTableView.backgroundColor = UIColor.clear
+        zlTableView.separatorInset = .zero
+        view.addSubview(zlTableView)
         showHeaderRefresh(show: true) {
             
             self.getData()
         }
-        tableView.mj_header.beginRefreshing()
+        zlTableView.mj_header.beginRefreshing()
         
     }
     
@@ -57,14 +57,15 @@ class HomeItemViewController: ZLBaseViewController {
                 let json = JSON.init(response)
                 
                 self.dataArray = json["subjects"].arrayValue
-                self.tableView.mj_header.endRefreshing()
-                self.tableView.reloadData()
+                self.zlTableView.mj_header.endRefreshing()
+                self.zlTableView.reloadData()
                 DLog(message: response)
             }) { (error) in
                 
-                self.tableView.mj_header.endRefreshing()
+                self.zlTableView.mj_header.endRefreshing()
                 DLog(message: error)
             }.disposed(by: dispose)
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

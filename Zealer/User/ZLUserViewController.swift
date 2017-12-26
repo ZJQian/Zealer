@@ -31,15 +31,15 @@ class ZLUserViewController: ZLBaseViewController {
         // Do any additional setup after loading the view.
         
         navigationController?.delegate = self
-        tableView.frame = CGRect.init(x: 0, y: -20, width: SCREEN_WIDTH, height: SCREEN_HEIGHT+20)
-        tableView.separatorInset = .zero
-        tableView.backgroundColor = UIColor.clear
-        tableView.rowHeight = 50.0
-        view.addSubview(tableView)
+        zlTableView.frame = CGRect.init(x: 0, y: -20, width: SCREEN_WIDTH, height: SCREEN_HEIGHT+20)
+        zlTableView.separatorInset = .zero
+        zlTableView.backgroundColor = UIColor.clear
+        zlTableView.rowHeight = 50.0
+        view.addSubview(zlTableView)
         showHeaderRefresh(show: true) {
             
             DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-                self.tableView.mj_header.endRefreshing()
+                self.zlTableView.mj_header.endRefreshing()
             })
         }
     }
@@ -137,7 +137,7 @@ class ZLUserViewController: ZLBaseViewController {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login") as! ZLBaseNavigationController
         let loginVC = vc.topViewController as! ZLLoginViewController
         loginVC.loginSuccessCallback = {
-            
+
             DLog(message: "登录成功")
             self.iv_head.sd_setImage(with: URL.init(string: "https://img1.doubanio.com/spic/s29477089.jpg"), placeholderImage: UIImage(named: "user_head"), options: SDWebImageOptions.scaleDownLargeImages, completed: nil)
             self.lb_state.text = "用户"+String(format: "%d",arc4random()%100)

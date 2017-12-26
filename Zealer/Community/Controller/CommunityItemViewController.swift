@@ -24,16 +24,16 @@ class CommunityItemViewController: ZLBaseViewController {
 
         // Do any additional setup after loading the view.
         
-        tableView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-49-64)
-        tableView.rowHeight = 80.0
-        tableView.backgroundColor = UIColor.clear
-        tableView.separatorInset = .zero
-        view.addSubview(tableView)
+        zlTableView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-49-64)
+        zlTableView.rowHeight = 80.0
+        zlTableView.backgroundColor = UIColor.clear
+        zlTableView.separatorInset = .zero
+        view.addSubview(zlTableView)
         showHeaderRefresh(show: true) {
             
             self.getData()
         }
-        tableView.mj_header.beginRefreshing()
+        zlTableView.mj_header.beginRefreshing()
     }
     
     fileprivate func getData() {
@@ -44,11 +44,11 @@ class CommunityItemViewController: ZLBaseViewController {
             .mapJSON()
             .subscribe(onSuccess: { (response) in
 
-                self.tableView.mj_header.endRefreshing()
+                self.zlTableView.mj_header.endRefreshing()
                 DLog(message: response)
         }) { (error) in
 
-            self.tableView.mj_header.endRefreshing()
+            self.zlTableView.mj_header.endRefreshing()
 
             DLog(message: error)
         }.disposed(by: dispose)

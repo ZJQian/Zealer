@@ -17,20 +17,18 @@ protocol ZLHomeSegmentViewDelegate {
 class ZLHomeSegmentView: UIView {
 
     var delegate: ZLHomeSegmentViewDelegate?
-    
-    
+    var scrollView = UIScrollView()
     let v_line = UIView()
     
     init(frame: CGRect,titleArray: Array<String>) {
         super.init(frame: frame)
         
-        let sv = UIScrollView.init(frame: bounds)
-        sv.showsHorizontalScrollIndicator = false
-        addSubview(sv)
+        scrollView = UIScrollView.init(frame: bounds)
+        scrollView.showsHorizontalScrollIndicator = false
+        addSubview(scrollView)
         
         var sum_width: CGFloat = 0.0
         let padding = 20
-        
         
         for index in 0..<titleArray.count {
             let str = titleArray[index] as NSString
@@ -42,26 +40,38 @@ class ZLHomeSegmentView: UIView {
             btn.frame = CGRect.init(x: sum_width + CGFloat(padding*index), y: 0, width: width, height: 40)
             btn.tag = 100+index
             btn.addTarget(self, action: #selector(changeLineFrame(_:)), for: .touchUpInside)
-            sv.addSubview(btn)
+            scrollView.addSubview(btn)
             sum_width += width
             
             if index == 0 {
-                v_line.frame = CGRect.init(x: btn.left, y: sv.height-3, width: btn.width, height: 3);
+                v_line.frame = CGRect.init(x: btn.left, y: scrollView.height-3, width: btn.width, height: 3);
                 v_line.backgroundColor = UIColor.white
-                sv.addSubview(v_line)
+                scrollView.addSubview(v_line)
             }
         }
-        sv.contentSize = CGSize.init(width: sum_width+CGFloat(titleArray.count*padding), height: sv.height)
+        scrollView.contentSize = CGSize.init(width: sum_width+CGFloat(titleArray.count*padding), height: scrollView.height)
         
+    }
+    
+    public func lineWillRoll(toIndex index: NSInteger) {
+        
+        let btn = viewWithTag(index+100) as! UIButton
+        animitedLine(withButton: btn)
     }
     
     @objc func changeLineFrame(_ sender: UIButton) {
         
         self.delegate?.clickSegment(withIndex: sender.tag-100)
+        animitedLine(withButton: sender)
+    }
+    
+    private func animitedLine(withButton button: UIButton) {
+        
+        scrollView.scrollRectToVisible(CGRect.init(x: button.frame.minX-30, y: 0, width: scrollView.width, height: scrollView.height), animated: true)
         UIView.animate(withDuration: 0.5) {
             var rect = self.v_line.frame
-            rect.origin.x = sender.left
-            rect.size.width = sender.width
+            rect.origin.x = button.left
+            rect.size.width = button.width
             self.v_line.frame = rect
         }
     }

@@ -103,9 +103,13 @@
 		6610ADFE1FDA404100533AA8 /* CommunityItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610ADFD1FDA404100533AA8 /* CommunityItemViewController.swift */; };
 		6610AE031FDA440700533AA8 /* MusicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610AE011FDA440700533AA8 /* MusicItemCell.swift */; };
 		6610AE041FDA440700533AA8 /* MusicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6610AE021FDA440700533AA8 /* MusicItemCell.xib */; };
+		661496131FEBAB6700B041CD /* ZLPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661496121FEBAB6700B041CD /* ZLPrivacyViewController.swift */; };
+		661496151FEBC8CA00B041CD /* InputPwdDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661496141FEBC8CA00B041CD /* InputPwdDialog.swift */; };
 		66177BD01FE0D77F00EB7B28 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66177BCF1FE0D77F00EB7B28 /* ItemDetailViewController.swift */; };
 		6620DDE41FDA762C00DB6244 /* SelectNameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620DDE31FDA762C00DB6244 /* SelectNameDialog.swift */; };
+		666B345D1FECDA3C008AAD57 /* PrivacyPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B345C1FECDA3C008AAD57 /* PrivacyPwdViewController.swift */; };
 		66C42D201FD8CF0A005898E7 /* ZLRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C42D1F1FD8CF0A005898E7 /* ZLRegisterViewController.swift */; };
+		66DAA0FC1FEDF1E500BBB9B6 /* ZLAdvertiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DAA0FB1FEDF1E500BBB9B6 /* ZLAdvertiseView.swift */; };
 		A8B962E05D9ACFF7DC1E4822 /* Pods_Zealer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC211C4474377CEB6F6E7405 /* Pods_Zealer.framework */; };
 		D6B0910A1E8870F35243B902 /* Pods_ZealerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687E4F7EB6EC88D50F190B1 /* Pods_ZealerTests.framework */; };
 		D6B0C90362418941AE0BD90F /* Pods_ZealerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F3DDB74F16063E760ABC62 /* Pods_ZealerUITests.framework */; };
@@ -234,9 +238,13 @@
 		6610ADFD1FDA404100533AA8 /* CommunityItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityItemViewController.swift; sourceTree = "<group>"; };
 		6610AE011FDA440700533AA8 /* MusicItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemCell.swift; sourceTree = "<group>"; };
 		6610AE021FDA440700533AA8 /* MusicItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicItemCell.xib; sourceTree = "<group>"; };
+		661496121FEBAB6700B041CD /* ZLPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLPrivacyViewController.swift; sourceTree = "<group>"; };
+		661496141FEBC8CA00B041CD /* InputPwdDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPwdDialog.swift; sourceTree = "<group>"; };
 		66177BCF1FE0D77F00EB7B28 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		6620DDE31FDA762C00DB6244 /* SelectNameDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNameDialog.swift; sourceTree = "<group>"; };
+		666B345C1FECDA3C008AAD57 /* PrivacyPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPwdViewController.swift; sourceTree = "<group>"; };
 		66C42D1F1FD8CF0A005898E7 /* ZLRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLRegisterViewController.swift; sourceTree = "<group>"; };
+		66DAA0FB1FEDF1E500BBB9B6 /* ZLAdvertiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLAdvertiseView.swift; sourceTree = "<group>"; };
 		6D94777B0F7BA368605BE1A0 /* Pods-ZealerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZealerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZealerTests/Pods-ZealerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80F3DDB74F16063E760ABC62 /* Pods_ZealerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZealerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F838FF2D0D15A1F128DADB /* Pods-ZealerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZealerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZealerUITests/Pods-ZealerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -445,6 +453,8 @@
 			children = (
 				660602411FD79F7500202B64 /* ZLUserViewController.swift */,
 				660602511FD81D0B00202B64 /* ZLSettingViewController.swift */,
+				661496121FEBAB6700B041CD /* ZLPrivacyViewController.swift */,
+				666B345C1FECDA3C008AAD57 /* PrivacyPwdViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -453,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				660602441FD7BFB700202B64 /* ZLLaunchViewController.swift */,
+				66DAA0FB1FEDF1E500BBB9B6 /* ZLAdvertiseView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -541,6 +552,7 @@
 			children = (
 				66109BDD1FD8E56400539BD4 /* WarnDialog.swift */,
 				6620DDE31FDA762C00DB6244 /* SelectNameDialog.swift */,
+				661496141FEBC8CA00B041CD /* InputPwdDialog.swift */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
@@ -812,6 +824,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Zealer/Pods-Zealer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -827,6 +840,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -984,6 +998,7 @@
 				660602361FD79CE000202B64 /* ZLMacro.swift in Sources */,
 				660602451FD7BFB700202B64 /* ZLLaunchViewController.swift in Sources */,
 				660602341FD79C2500202B64 /* ZLBaseNavigationController.swift in Sources */,
+				666B345D1FECDA3C008AAD57 /* PrivacyPwdViewController.swift in Sources */,
 				660602521FD81D0B00202B64 /* ZLSettingViewController.swift in Sources */,
 				6610ADFB1FDA2E1100533AA8 /* USBoxCell.swift in Sources */,
 				660601FE1FD79A6500202B64 /* ViewController.swift in Sources */,
@@ -1000,6 +1015,9 @@
 				6606024A1FD7C9E100202B64 /* ZLLoginViewController.swift in Sources */,
 				66109BE01FD9182B00539BD4 /* NetUtils.swift in Sources */,
 				66177BD01FE0D77F00EB7B28 /* ItemDetailViewController.swift in Sources */,
+				661496151FEBC8CA00B041CD /* InputPwdDialog.swift in Sources */,
+				661496131FEBAB6700B041CD /* ZLPrivacyViewController.swift in Sources */,
+				66DAA0FC1FEDF1E500BBB9B6 /* ZLAdvertiseView.swift in Sources */,
 				6606024E1FD7E38300202B64 /* UIView+Ext.swift in Sources */,
 				660602321FD79BFE00202B64 /* ZLBaseViewController.swift in Sources */,
 				660602391FD79E5F00202B64 /* ZLTabBarController.swift in Sources */,
@@ -1172,6 +1190,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BKM5U7B7K8;
 				INFOPLIST_FILE = Zealer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1189,6 +1208,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BKM5U7B7K8;
 				INFOPLIST_FILE = Zealer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

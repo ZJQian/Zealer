@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.6.0)
   - Hue (3.0.1)
+  - IQKeyboardManagerSwift (5.0.6)
   - MJRefresh (3.1.15.1)
   - Moya (10.0.1):
     - Moya/Core (= 10.0.1)
@@ -28,6 +29,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.6.0)
   - Hue (~> 3.0.1)
+  - IQKeyboardManagerSwift (~> 5.0.6)
   - MJRefresh (~> 3.1.15.1)
   - Moya (~> 10.0.1)
   - Moya/RxSwift
@@ -41,6 +43,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
@@ -52,6 +55,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 6f427390ea8af9c977c778d0721531a6de249b5d
+PODFILE CHECKSUM: 94dd445a4742c8b5a5869249d8a29830d8ce4d2d
 
 COCOAPODS: 1.4.0.beta.2

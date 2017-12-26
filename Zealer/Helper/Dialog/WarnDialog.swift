@@ -62,7 +62,6 @@ class WarnDialog: UIView {
         }.disposed(by: dispose)
         v_warn.addSubview(btn)
         
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -39,13 +39,13 @@ class ZLHomeViewController: ZLBaseViewController {
                 
         seg = ZLHomeSegmentView.init(frame: CGRect.init(x: 20, y: 0, width: SCREEN_WIDTH-80, height:44), titleArray: titleArray)
         seg?.delegate = self
+        showBackItem(show: false)
         navigationItem.titleView = seg
         showRightItem(imageName: "search")
     }
     
     fileprivate func setSubViews() {
         
-        navigationController?.delegate = self
         scrollView.delegate = self
         view.addSubview(scrollView)
         for _ in 0..<titleArray.count {
@@ -67,6 +67,7 @@ class ZLHomeViewController: ZLBaseViewController {
                        APIManager.top250,
                        APIManager.us_box][index]
         vc.index = index
+        seg?.lineWillRoll(toIndex: index)
         if vc.isViewLoaded {
             return
         }
@@ -94,12 +95,5 @@ extension ZLHomeViewController: ZLHomeSegmentViewDelegate,HomeItemViewController
         let vc = ItemDetailViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        
-//        let isShow = viewController.isKind(of: ZLHomeViewController.self as AnyClass)
-//        seg?.isHidden = !isShow
-    }
-    
 }
 

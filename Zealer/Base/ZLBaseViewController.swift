@@ -14,7 +14,7 @@ class ZLBaseViewController: UIViewController {
 
     var refreshImgArray = Array<UIImage>()
     
-    lazy var tableView: UITableView = {
+    lazy var zlTableView: UITableView = {
         let table = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), style: .plain)
         table.tableFooterView = UIView.init()
         table.delegate = self as UITableViewDelegate
@@ -47,6 +47,7 @@ class ZLBaseViewController: UIViewController {
         
         view.backgroundColor = BG_COLOR
         showBackItem(show: true)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         
         for index in 1...63 {
             let img = UIImage.init(named: "refresh-\(index)")
@@ -73,14 +74,14 @@ class ZLBaseViewController: UIViewController {
             header?.setImages(refreshImgArray, duration: 1, for: .refreshing)
             header?.lastUpdatedTimeLabel.isHidden = true
             header?.stateLabel.isHidden = true
-            tableView.mj_header = header
+            zlTableView.mj_header = header
         }
     }
     
     public func showFooterRefresh(show: Bool, refresh: @escaping() -> ()){
         if show {
             
-            tableView.mj_footer = MJRefreshBackStateFooter.init(refreshingBlock: {
+            zlTableView.mj_footer = MJRefreshBackStateFooter.init(refreshingBlock: {
                 
                 refresh()
             })
@@ -93,13 +94,24 @@ class ZLBaseViewController: UIViewController {
     public func showBackItem(show: Bool) {
         
         if show {
-            let back_item = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: #selector(leftItemAction))
-            navigationController?.navigationBar.tintColor = UIColor.white
-            navigationController?.navigationBar.backIndicatorImage = UIImage(named:"nav_back")
-            navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named:"nav_back")
-            navigationItem.backBarButtonItem = back_item
+//            let back_item = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: #selector(leftItemAction))
+//            navigationController?.navigationBar.tintColor = UIColor.white
+//            navigationController?.navigationBar.backIndicatorImage = UIImage(named:"nav_back")
+//            navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named:"nav_back")
+//            navigationItem.backBarButtonItem = back_item
+            navigationItem.hidesBackButton = true
+
+            
+            let btn_left = UIButton.init(type: .custom)
+            btn_left.frame = CGRect.init(x: 0, y: 0, width: 18, height: 18)
+            btn_left.setImage(UIImage.init(named: "nav_back_white"), for: .normal)
+            btn_left.setTitleColor(UIColor.white, for: .normal)
+            btn_left.addTarget(self, action: #selector(leftItemAction), for: .touchUpInside)
+            let left = UIBarButtonItem.init(customView: btn_left)
+            navigationItem.leftBarButtonItem = left
         }else{
             
+            navigationItem.leftBarButtonItem = nil
             navigationItem.hidesBackButton = true
         }
         
