@@ -10,6 +10,9 @@ import Foundation
 import Moya
 import Result
 
+let MyProvider = MoyaProvider<APIManager>()
+
+
 enum APIManager {
     case in_theaters//正在热映
     case coming_soon//即将上映

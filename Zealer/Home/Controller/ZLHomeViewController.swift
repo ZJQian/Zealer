@@ -94,6 +94,7 @@ extension ZLHomeViewController: ZLHomeSegmentViewDelegate,HomeItemViewController
         
         let vc = ItemDetailViewController()
         navigationController?.pushViewController(vc, animated: true)
+        UIView.transition(with: (navigationController?.view)!, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, animations: nil, completion: nil)
     }
 }
 

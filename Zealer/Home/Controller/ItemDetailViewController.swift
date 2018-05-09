@@ -14,6 +14,14 @@ class ItemDetailViewController: ZLBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        navigationController?.navigationBar.setViewColor(UIColor.orange.withAlphaComponent(0.0))
+    }
+    
+    override func leftItemAction() {
+        
+        super.leftItemAction()
+        UIView.transition(with: (navigationController?.view)!, duration: 1, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: nil, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

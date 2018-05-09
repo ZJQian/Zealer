@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7EF674D3D606CCAA7C553B2DD8224542"
+               BlueprintIdentifier = "04122A6E8DA4C5E32FA75553EA21E551"
                BuildableName = "Pods_Zealer.framework"
                BlueprintName = "Pods-Zealer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7EF674D3D606CCAA7C553B2DD8224542"
+            BlueprintIdentifier = "04122A6E8DA4C5E32FA75553EA21E551"
             BuildableName = "Pods_Zealer.framework"
             BlueprintName = "Pods-Zealer"
             ReferencedContainer = "container:Pods.xcodeproj">
